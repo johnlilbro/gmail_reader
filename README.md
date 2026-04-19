@@ -37,7 +37,7 @@ uv pip install -r requirements.txt
 .venv/bin/python gmail_reader.py auth
 ```
 
-On a headless server, the script will print an authorization URL. Open it in your browser, approve access, then paste the returned authorization code back into the terminal.
+For the easiest setup, run the auth flow on a laptop or desktop with a browser. That will create `token.json`, which you can then copy to the server for read-only use.
 
 ## Check unread mail
 
