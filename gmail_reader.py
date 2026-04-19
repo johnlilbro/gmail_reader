@@ -27,7 +27,13 @@ def get_credentials() -> Credentials:
         return creds
 
     flow = InstalledAppFlow.from_client_secrets_file(str(CLIENT_SECRET_FILE), SCOPES)
-    creds = flow.run_local_server(port=0)
+    auth_url, _ = flow.authorization_url(prompt="consent")
+    print("Open this URL in your browser and authorize access:\n")
+    print(auth_url)
+    print("\nPaste the full authorization code here:")
+    code = input().strip()
+    flow.fetch_token(code=code)
+    creds = flow.credentials
     TOKEN_FILE.write_text(creds.to_json())
     return creds
 

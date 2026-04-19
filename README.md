@@ -37,6 +37,8 @@ uv pip install -r requirements.txt
 .venv/bin/python gmail_reader.py auth
 ```
 
+On a headless server, the script will print an authorization URL. Open it in your browser, approve access, then paste the returned authorization code back into the terminal.
+
 ## Check unread mail
 
 ```bash
